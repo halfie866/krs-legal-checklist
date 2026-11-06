@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="ru" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Племенной КРС: Юридический гид фермера РК</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            navy: '#1B365D',
+                            navyLight: '#2C4D75',
+                            green: '#2E7D32',
+                            greenHover: '#215B24',
+                            accent: '#D97706',
+                            bgGray: '#F8FAFC',
+                            cardBg: '#FFFFFF',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Custom scrollbar for better visual quality */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1B365D;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #2E7D32;
+        }
+        .print-only {
+            display: none;
+        }
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable-checklist, #printable-checklist * {
+                visibility: visible;
+            }
+            #printable-checklist {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                display: block !important;
+            }
+            .no-print {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body class="bg-brand-bgGray text-slate-800 font-sans leading-relaxed min-h-screen flex flex-col antialiased">
+
+    <!-- HEADER / NAVIGATION -->
+    <header class="sticky top-0 z-40 bg-brand-navy text-white shadow-lg border-b border-amber-500/30">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo & Title -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-lg bg-brand-green flex items-center justify-center text-white text-2xl shadow-md border border-green-400/30">
+                        <i class="fa-solid fa-cow"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-lg sm:text-xl tracking-tight leading-tight text-amber-400">
+                            Племенной КРС: Юридический гид
+                        </h1>
+                        <p class="text-xs text-slate-300 font-medium">
+                            Автор: Родин Марк Александрович | 3 поток
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden md:flex space-x-1 lg:space-x-4 text-sm font-medium">
+                    <a href="#section-map" class="px-3 py-2 rounded-md hover:bg-brand-navyLight hover:text-amber-400 transition">1. Дорожная карта</a>
+                    <a href="#section-isz" class="px-3 py-2 rounded-md hover:bg-brand-navyLight hover:text-amber-400 transition">2. ИСЖ (Учет)</a>
+                    <a href="#section-ias" class="px-3 py-2 rounded-md hover:bg-brand-navyLight hover:text-amber-400 transition">3. ИАС (Селекция)</a>
+                    <a href="#section-expo" class="px-3 py-2 rounded-md hover:bg-brand-navyLight hover:text-amber-400 transition">4. Выставки</a>
+                    <a href="#section-npa" class="px-3 py-2 rounded-md hover:bg-brand-navyLight hover:text-amber-400 transition">5. НПА и Документы</a>
+                    <a href="#section-calculator" class="px-3 py-2 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-md transition shadow-sm">6. Класс КРС (Бонитировка)</a>
+                </nav>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" type="button" class="p-2 rounded-md text-slate-200 hover:text-white hover:bg-brand-navyLight focus:outline-none" aria-label="Открыть меню">
+                        <i class="fa-solid fa-bars text-2xl" id="menu-icon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-brand-navy border-t border-slate-700 px-4 pt-2 pb-4 space-y-1">
+            <a href="#section-map" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-navyLight hover:text-amber-400">1. Дорожная карта</a>
+            <a href="#section-isz" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-navyLight hover:text-amber-400">2. ИСЖ и Учет КРС</a>
+            <a href="#section-ias" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-navyLight hover:text-amber-400">3. ИАС и Племенное дело</a>
+            <a href="#section-expo" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-navyLight hover:text-amber-400">4. Подготовка к выставке</a>
+            <a href="#section-npa" class="mobile-link block px-3 py-2 rounded-md text-base font-medium text-slate-200 hover:bg-brand-navyLight hover:text-amber-400">5. База НПА и Образцы</a>
+            <a href="#section-calculator" class="mobile-link block px-3 py-2 rounded-md text-base font-bold text-amber-400 hover:bg-brand-navyLight">6. Определение класса КРС</a>
+        </div>
+    </header>
+
+    <!-- HERO BANNER -->
+    <section class="bg-gradient-to-r from-brand-navy via-slate-900 to-brand-green text-white py-12 px-4 sm:px-6 lg:px-8 border-b-4 border-amber-500 shadow-inner">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="space-y-4 max-w-3xl">
+                <div class="inline-flex items-center space-x-2 bg-amber-500/20 text-amber-300 text-xs font-semibold uppercase tracking-wider px-3 py-1 rounded-full border border-amber-500/40">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                    <span>Законодательство Республики Казахстан</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight">
+                    Правовой справочник по племенному КРС
+                </h2>
+                <p class="text-slate-200 text-base sm:text-lg leading-relaxed">
+                    Пошаговое юридическое руководство для фермеров и руководителей КХ: от биркации новорожденных телят в ИСЖ до бонитировки в ИАС и оформления ветеринарных справок для выставок.
+                </p>
+                <div class="flex flex-wrap gap-4 pt-2">
+                    <a href="#interactive-tool" class="inline-flex items-center space-x-2 bg-brand-green hover:bg-brand-greenHover text-white font-semibold px-5 py-3 rounded-xl shadow-lg transition transform hover:-translate-y-0.5">
+                        <i class="fa-solid fa-list-check"></i>
+                        <span>Открыть Чек-лист фермера</span>
+                    </a>
+                    <a href="#section-npa" class="inline-flex items-center space-x-2 bg-white/10 hover:bg-white/20 text-white font-semibold px-5 py-3 rounded-xl border border-white/30 backdrop-blur-sm transition">
+                        <i class="fa-solid fa-book"></i>
+                        <span>База Законов и НПА</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-auto flex-shrink-0 bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 shadow-2xl text-center md:text-left min-w-[280px]">
+                <div class="text-amber-400 font-bold text-lg mb-2">
+                    <i class="fa-solid fa-shield-halved mr-2"></i> Ключевые нормы РК:
+                </div>
+                <ul class="text-sm text-slate-200 space-y-2">
+                    <li class="flex items-center"><i class="fa-solid fa-check text-green-400 mr-2"></i> Биркация: <strong>не позднее 14 дней</strong></li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-green-400 mr-2"></i> Внос в ИСЖ: <strong>3 рабочих дня</strong></li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-green-400 mr-2"></i> Выдача Ветпаспорта: <strong>3 дня</strong></li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-green-400 mr-2"></i> Карантин к выставке: <strong>30 дней</strong></li>
+                    <li class="flex items-center"><i class="fa-solid fa-check text-green-400 mr-2"></i> Действие справки №1: <strong>3 дня</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAIN CONTENT CONTAINERS -->
+    <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- SECTION 1: ROADMAP / MAIN -->
+        <section id="section-map" class="scroll-mt-24 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <span class="w-10 h-10 rounded-xl bg-brand-navy text-white flex items-center justify-center font-bold text-lg">1</span>
+                <div>
+                    <h3 class="text-2xl font-bold text-brand-navy">Главная: Дорожная карта племенного дела</h3>
+                    <p class="text-sm text-slate-500">Обзор полного правового жизненного цикла племенного животного в РК</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+                <!-- Step 1 Card -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-brand-green transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-blue-100 text-brand-navy flex items-center justify-center mb-4 font-bold">
+                            <i class="fa-solid fa-tag"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Этап I: Рождение и ИСЖ</h4>
+                        <p class="text-sm text-slate-600">Присвоение ИНЖ, мечение (биркация/чипирование) в первые 14 дней и получение официального ветпаспорта.</p>
+                    </div>
+                    <span class="mt-4 text-xs font-semibold text-brand-navy">Закон РК «О ветеринарии» &rarr;</span>
+                </div>
+
+                <!-- Step 2 Card -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-brand-green transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-green-100 text-brand-green flex items-center justify-center mb-4 font-bold">
+                            <i class="fa-solid fa-dna"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Этап II: Племенной учет в ИАС</h4>
+                        <p class="text-sm text-slate-600">Внесение карточки осеменения, подтверждение происхождения, ежегодная бонитировка и выдача Племенного свидетельства.</p>
+                    </div>
+                    <span class="mt-4 text-xs font-semibold text-brand-green">Закон РК «О племенном деле» &rarr;</span>
+                </div>
+
+                <!-- Step 3 Card -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-brand-green transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-700 flex items-center justify-center mb-4 font-bold">
+                            <i class="fa-solid fa-syringe"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Этап III: Ветеринарная подготовка</h4>
+                        <p class="text-sm text-slate-600">Проведение профилактических обработок, вакцинаций и строгого 30-дневного профилактического карантина.</p>
+                    </div>
+                    <span class="mt-4 text-xs font-semibold text-amber-700">Правила карантинирования &rarr;</span>
+                </div>
+
+                <!-- Step 4 Card -->
+                <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 hover:border-brand-green transition flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center mb-4 font-bold">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <h4 class="font-bold text-slate-800 text-lg mb-2">Этап IV: Выставка и Выезд</h4>
+                        <p class="text-sm text-slate-600">Получение Ветеринарной справки формы № 1 (действует 3 дня) и регистрация в реестре участников выставки.</p>
+                    </div>
+                    <span class="mt-4 text-xs font-semibold text-purple-700">Правила выставок РК &rarr;</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE CHECKLIST TOOL -->
+        <section id="interactive-tool" class="scroll-mt-24 bg-white rounded-2xl shadow-lg border-2 border-brand-green p-6 sm:p-8">
+            <div class="flex flex-col md:flex-row md:items-center justify-between border-b border-slate-200 pb-6 mb-6 gap-4">
+                <div>
+                    <div class="inline-flex items-center space-x-2 bg-green-100 text-brand-green text-xs font-bold px-3 py-1 rounded-full mb-2">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Интерактивный мастер</span>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-brand-navy">Интерактивный Чек-лист Фермера</h3>
+                    <p class="text-slate-600 text-sm">Отмечайте выполненные этапы. Состояние сохраняется автоматически в вашем браузере.</p>
+                </div>
+
+                <!-- Export & Reset Buttons -->
+                <div class="flex flex-wrap items-center gap-2">
+                    <button id="btn-export" onclick="exportChecklist()" class="px-4 py-2 bg-brand-navy hover:bg-brand-navyLight text-white text-xs font-semibold rounded-lg shadow transition flex items-center space-x-2">
+                        <i class="fa-solid fa-download"></i>
+                        <span>Сохранить в TXT</span>
+                    </button>
+                    <button onclick="window.print()" class="px-4 py-2 bg-slate-700 hover:bg-slate-800 text-white text-xs font-semibold rounded-lg shadow transition flex items-center space-x-2">
+                        <i class="fa-solid fa-print"></i>
+                        <span>Печать</span>
+                    </button>
+                    <button id="btn-reset" onclick="resetChecklist()" class="px-4 py-2 bg-rose-50 hover:bg-rose-100 text-rose-700 text-xs font-semibold rounded-lg border border-rose-200 transition flex items-center space-x-2">
+                        <i class="fa-solid fa-rotate-left"></i>
+                        <span>Сбросить</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Progress Bar Section -->
+            <div class="bg-slate-50 p-5 rounded-xl border border-slate-200 mb-6">
+                <div class="flex justify-between items-center mb-2">
+                    <span class="text-sm font-bold text-brand-navy flex items-center">
+                        <i class="fa-solid fa-chart-line mr-2 text-brand-green"></i> Прогресс готовности к выставке / учету:
+                    </span>
+                    <span id="progress-percent" class="text-base font-extrabold text-brand-green">0%</span>
+                </div>
+                <div class="w-full bg-slate-200 rounded-full h-4 overflow-hidden p-0.5">
+                    <div id="progress-bar" class="bg-gradient-to-r from-brand-navy to-brand-green h-full rounded-full transition-all duration-500 ease-out w-0"></div>
+                </div>
+                <div class="flex justify-between items-center mt-2 text-xs text-slate-500">
+                    <span id="progress-count">Выполнено 0 из 10 шагов</span>
+                    <span id="progress-status" class="font-medium text-amber-600">Статус: Требуется выполнение процедур</span>
+                </div>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="flex flex-wrap gap-2 mb-6">
+                <button onclick="filterChecklist('all')" class="filter-btn active-filter px-4 py-2 rounded-xl text-xs font-bold transition bg-brand-navy text-white shadow-sm" data-category="all">
+                    Все шаги (10)
+                </button>
+                <button onclick="filterChecklist('isz')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200" data-category="isz">
+                    <i class="fa-solid fa-tag mr-1 text-blue-600"></i> ИСЖ & Ветпаспорт
+                </button>
+                <button onclick="filterChecklist('ias')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200" data-category="ias">
+                    <i class="fa-solid fa-dna mr-1 text-brand-green"></i> ИАС & Селекция
+                </button>
+                <button onclick="filterChecklist('expo')" class="filter-btn px-4 py-2 rounded-xl text-xs font-bold transition bg-slate-100 text-slate-700 hover:bg-slate-200" data-category="expo">
+                    <i class="fa-solid fa-trophy mr-1 text-amber-600"></i> Подготовка к Выставке
+                </button>
+            </div>
+
+            <!-- Tasks Container (Populated via JS) -->
+            <div id="checklist-items" class="space-y-3">
+                <!-- Dynamic Items will be rendered here -->
+            </div>
+        </section>
+
+        <!-- SECTION 2: ISZH & IDENTIFICATION -->
+        <section id="section-isz" class="scroll-mt-24 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <span class="w-10 h-10 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-lg">2</span>
+                <div>
+                    <h3 class="text-2xl font-bold text-brand-navy">Регистрация и идентификация КРС (ИСЖ)</h3>
+                    <p class="text-sm text-slate-500">Нормы Закона РК «О ветеринарии» и Правил идентификации СХЖ</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-blue-50/60 p-5 rounded-xl border border-blue-100">
+                    <div class="text-blue-800 font-bold text-lg mb-1">
+                        <i class="fa-regular fa-clock mr-2"></i>14 календарных дней
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Срок мечения (биркации) новорожденных телят со дня рождения (Приказ МСХ РК № 7-1/48, п. 12).
+                    </p>
+                </div>
+
+                <div class="bg-blue-50/60 p-5 rounded-xl border border-blue-100">
+                    <div class="text-blue-800 font-bold text-lg mb-1">
+                        <i class="fa-solid fa-laptop-code mr-2"></i>3 рабочих дня
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Срок внесения ветспециалистом данных о биркации в базу ИСЖ с момента навешивания бирки (п. 19).
+                    </p>
+                </div>
+
+                <div class="bg-blue-50/60 p-5 rounded-xl border border-blue-100">
+                    <div class="text-blue-800 font-bold text-lg mb-1">
+                        <i class="fa-solid fa-id-card-clip mr-2"></i>3 рабочих дня
+                    </div>
+                    <p class="text-xs text-slate-600 leading-relaxed">
+                        Срок выдачи Ветеринарного паспорта на индивидуальное животное после внесения в ИСЖ (ст. 35 Закона).
+                    </p>
+                </div>
+            </div>
+
+            <div class="prose max-w-none text-slate-700 text-sm space-y-4">
+                <h4 class="text-base font-bold text-brand-navy">Правовой порядок присвоения ИНЖ:</h4>
+                <ol class="list-decimal pl-5 space-y-2">
+                    <li>Фермер уведомляет ветеринарного врача местного исполнительного органа (МИО) о рождении теленка.</li>
+                    <li>Ветеринарный врач осуществляет биркование двумя ушными бирками (эмитированными МСХ РК) с индивидуальным номером животного (ИНЖ).</li>
+                    <li>Данные о животном (пол, масть, дата рождения, мать) заносятся в единый Реестр ИСЖ.</li>
+                    <li>При утере бирки подается заявление на выдачу дубликата, который изготавливается в течение <strong>10 рабочих дней</strong>.</li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- SECTION 3: IAS & BREEDING -->
+        <section id="section-ias" class="scroll-mt-24 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <span class="w-10 h-10 rounded-xl bg-brand-green text-white flex items-center justify-center font-bold text-lg">3</span>
+                <div>
+                    <h3 class="text-2xl font-bold text-brand-navy">Племенной учет и осеменение (ИАС)</h3>
+                    <p class="text-sm text-slate-500">Правовое регулирование Закон РК «О племенном животноводстве»</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                <div class="bg-green-50/60 p-5 rounded-xl border border-green-100">
+                    <h4 class="font-bold text-brand-green text-base mb-2">
+                        <i class="fa-solid fa-notes-medical mr-2"></i>Искусственное осеменение и учет
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Все данные о проведении искусственного осеменения маточного поголовья с указанием кода быка-производителя фиксируются в акте осеменения и вносятся в ИАС в течение <strong>7 календарных дней</strong>.
+                    </p>
+                    <span class="inline-block bg-white text-brand-green text-[11px] font-semibold px-2.5 py-1 rounded border border-green-200">Приказ МСХ РК № 3-2/306</span>
+                </div>
+
+                <div class="bg-green-50/60 p-5 rounded-xl border border-green-100">
+                    <h4 class="font-bold text-brand-green text-base mb-2">
+                        <i class="fa-solid fa-award mr-2"></i>Бонитировка и Племенное свидетельство
+                    </h4>
+                    <p class="text-xs text-slate-600 leading-relaxed mb-3">
+                        Оценка племенных качеств (бонитировка) проводится ежегодно (1 раз в год). На основании данных бонитировки Республиканская палата выдает Племенное свидетельство в течение <strong>5 рабочих дней</strong>.
+                    </p>
+                    <span class="inline-block bg-white text-brand-green text-[11px] font-semibold px-2.5 py-1 rounded border border-green-200">Ст. 14 Закона «О племенном животноводстве»</span>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-700">
+                <p class="font-semibold text-brand-navy mb-1"><i class="fa-solid fa-circle-info mr-1"></i> Обратите внимание:</p>
+                <p>Регистрация скота в ИАС необходима не только для подтверждения племенного статуса, но и является обязательным условием для получения государственных субсидий на селекционно-племенную работу в РК.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 4: EXHIBITION PREPARATION -->
+        <section id="section-expo" class="scroll-mt-24 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <span class="w-10 h-10 rounded-xl bg-amber-600 text-white flex items-center justify-center font-bold text-lg">4</span>
+                <div>
+                    <h3 class="text-2xl font-bold text-brand-navy">Ветеринарная подготовка к выставкам КРС</h3>
+                    <p class="text-sm text-slate-500">Ветеринарно-санитарные правила перемещения и экспонирования животных</p>
+                </div>
+            </div>
+
+            <!-- Special Visual Cards for Section 6 compliance styling -->
+            <div id="expo-cards-container" class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                <div class="bg-amber-50/60 p-5 rounded-xl border border-amber-200 shadow-sm hover:shadow transition">
+                    <div class="w-8 h-8 rounded-full bg-amber-600 text-white flex items-center justify-center text-sm font-bold mb-3">1</div>
+                    <h4 class="font-bold text-slate-800 text-sm mb-1">Профилактический Карантин</h4>
+                    <div class="text-2xl font-extrabold text-amber-700 mb-2">30 дней</div>
+                    <p class="text-xs text-slate-600">Перед вывозом на выставку животные изолируются и проходят диагностические исследования (бруцеллез, туберкулез).</p>
+                </div>
+
+                <div class="bg-amber-50/60 p-5 rounded-xl border border-amber-200 shadow-sm hover:shadow transition">
+                    <div class="w-8 h-8 rounded-full bg-amber-600 text-white flex items-center justify-center text-sm font-bold mb-3">2</div>
+                    <h4 class="font-bold text-slate-800 text-sm mb-1">Вакцинация против сибирской язвы</h4>
+                    <div class="text-2xl font-extrabold text-amber-700 mb-2">не позднее 14 дней</div>
+                    <p class="text-xs text-slate-600">Прививка должна быть сделана не менее чем за 14 дней до погрузки и транспортировки к месту выставки.</p>
+                </div>
+
+                <div class="bg-amber-50/60 p-5 rounded-xl border border-amber-200 shadow-sm hover:shadow transition">
+                    <div class="w-8 h-8 rounded-full bg-amber-600 text-white flex items-center justify-center text-sm font-bold mb-3">3</div>
+                    <h4 class="font-bold text-slate-800 text-sm mb-1">Ветеринарная справка № 1</h4>
+                    <div class="text-2xl font-extrabold text-amber-700 mb-2">Срок: 3 суток</div>
+                    <p class="text-xs text-slate-600">Выдается ветеринарным врачом через ИСЖ. Действительна 3 дня с момента выдачи до начала перевозки.</p>
+                </div>
+            </div>
+
+            <div class="p-4 bg-rose-50 border-l-4 border-rose-500 rounded-r-xl text-xs text-rose-800 space-y-1">
+                <span class="font-bold"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Важно для транспортировки:</span>
+                <p>Транспортировка скота без ветеринарной справки формы № 1 или ветеринарного сертификата влечет административную ответственность по ст. 406 КОАП РК с изъятием животного на штрафную стоянку МИО.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 5: LEGAL BASE & SAMPLES -->
+        <section id="section-npa" class="scroll-mt-24 bg-white rounded-2xl shadow-sm border border-slate-200 p-6 sm:p-8">
+            <div class="flex items-center space-x-3 border-b border-slate-200 pb-4 mb-6">
+                <span class="w-10 h-10 rounded-xl bg-purple-700 text-white flex items-center justify-center font-bold text-lg">5</span>
+                <div>
+                    <h3 class="text-2xl font-bold text-brand-navy">База НПА и Образцы документов</h3>
+                    <p class="text-sm text-slate-500">Проверенные официальные ссылки на adilet.zan.kz и образцы документов</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                <!-- Legal Acts Links -->
+                <div>
+                    <h4 class="font-bold text-slate-800 text-base mb-4 flex items-center">
+                        <i class="fa-solid fa-scale-unbalanced text-brand-navy mr-2"></i> Официальные НПА Республики Казахстан
+                    </h4>
+                    <ul class="space-y-3 text-xs">
+                        <li class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-brand-navy transition flex justify-between items-center">
+                            <div>
+                                <span class="font-bold block text-slate-800">Закон РК «О племенном животноводстве»</span>
+                                <span class="text-slate-500">от 09.07.1998 № 278-I (ст. 1, 9, 14, 18)</span>
+                            </div>
+                            <a href="https://adilet.zan.kz/rus/docs/Z980000278_" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:text-brand-green font-semibold">
+                                adilet.zan.kz <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                            </a>
+                        </li>
+
+                        <li class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-brand-navy transition flex justify-between items-center">
+                            <div>
+                                <span class="font-bold block text-slate-800">Закон РК «О ветеринарии»</span>
+                                <span class="text-slate-500">от 10.07.2002 № 410-II (ст. 10, 26, 35)</span>
+                            </div>
+                            <a href="https://adilet.zan.kz/rus/docs/Z020000410_" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:text-brand-green font-semibold">
+                                adilet.zan.kz <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                            </a>
+                        </li>
+
+                        <li class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-brand-navy transition flex justify-between items-center">
+                            <div>
+                                <span class="font-bold block text-slate-800">Правила идентификации СХЖ</span>
+                                <span class="text-slate-500">Приказ МСХ РК от 27.01.2015 № 7-1/48</span>
+                            </div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1500010377" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:text-brand-green font-semibold">
+                                adilet.zan.kz <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                            </a>
+                        </li>
+
+                        <li class="p-3 rounded-lg bg-slate-50 border border-slate-200 hover:border-brand-navy transition flex justify-between items-center">
+                            <div>
+                                <span class="font-bold block text-slate-800">Правила ведения племенного учета</span>
+                                <span class="text-slate-500">Приказ МСХ РК от 12.06.2014 № 3-2/306</span>
+                            </div>
+                            <a href="https://adilet.zan.kz/rus/docs/V1400009623" target="_blank" rel="noopener noreferrer" class="text-brand-navy hover:text-brand-green font-semibold">
+                                adilet.zan.kz <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Document Modals Preview Triggers -->
+                <div>
+                    <h4 class="font-bold text-slate-800 text-base mb-4 flex items-center">
+                        <i class="fa-solid fa-file-contract text-brand-green mr-2"></i> Шаблоны и образцы актов
+                    </h4>
+                    <div class="space-y-3">
+                        <button onclick="openModal('modal-passport')" class="w-full text-left p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-green hover:bg-green-50/30 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-file-invoice text-2xl text-slate-400 group-hover:text-brand-green transition"></i>
+                                <div>
+                                    <div class="font-bold text-sm text-slate-800">Образец Ветеринарного паспорта КРС</div>
+                                    <div class="text-xs text-slate-500">Форма ИСЖ с указанием ИНЖ и биометрики</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-semibold text-brand-green">Просмотр &rarr;</span>
+                        </button>
+
+                        <button onclick="openModal('modal-act')" class="w-full text-left p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-green hover:bg-green-50/30 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-file-signature text-2xl text-slate-400 group-hover:text-brand-green transition"></i>
+                                <div>
+                                    <div class="font-bold text-sm text-slate-800">Акт искусственного осеменения</div>
+                                    <div class="text-xs text-slate-500">Типовая форма для внесения данных в ИАС</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-semibold text-brand-green">Просмотр &rarr;</span>
+                        </button>
+
+                        <button onclick="openModal('modal-cert')" class="w-full text-left p-4 rounded-xl bg-slate-50 border border-slate-200 hover:border-brand-green hover:bg-green-50/30 transition flex items-center justify-between group">
+                            <div class="flex items-center space-x-3">
+                                <i class="fa-solid fa-stamp text-2xl text-slate-400 group-hover:text-brand-green transition"></i>
+                                <div>
+                                    <div class="font-bold text-sm text-slate-800">Племенное свидетельство РК</div>
+                                    <div class="text-xs text-slate-500">Выдается Республиканской палатой породы</div>
+                                </div>
+                            </div>
+                            <span class="text-xs font-semibold text-brand-green">Просмотр &rarr;</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 6: CALCULATOR / BREEDING CLASS DETERMINATION -->
+        <section id="section-calculator" class="scroll-mt-24 bg-gradient-to-br from-slate-900 via-brand-navy to-slate-900 rounded-2xl shadow-xl border-2 border-amber-500/50 p-6 sm:p-8 text-white">
+            <div class="flex items-center space-x-3 border-b border-slate-700 pb-4 mb-6">
+                <span class="w-10 h-10 rounded-xl bg-amber-500 text-slate-900 flex items-center justify-center font-extrabold text-lg">6</span>
+                <div>
+                    <h3 class="text-2xl font-extrabold text-amber-400">Калькулятор определения класса КРС (Бонитировка)</h3>
+                    <p class="text-sm text-slate-300">Интерактивный расчет племенного класса бычков и телок по стандарту МСХ РК</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- INPUT FORM (No PII) -->
+                <div class="lg:col-span-7 bg-white/5 backdrop-blur-md p-6 rounded-xl border border-white/10 space-y-5">
+                    <h4 class="text-base font-bold text-slate-100 flex items-center border-b border-white/10 pb-2">
+                        <i class="fa-solid fa-sliders text-amber-400 mr-2"></i> Введите параметры животного:
+                    </h4>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Breed Select -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Порода КРС</label>
+                            <select id="calc-breed" class="w-full bg-slate-800 text-slate-100 border border-slate-600 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-amber-500 outline-none">
+                                <option value="angus">Ангус (Абердин-ангусская)</option>
+                                <option value="hereford">Герефордская</option>
+                                <option value="kazakh">Казахская белоголовая</option>
+                                <option value="auliekol">Аулиекольская</option>
+                                <option value="simmental">Симментальская</option>
+                            </select>
+                        </div>
+
+                        <!-- Sex Select -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Пол животного</label>
+                            <select id="calc-sex" class="w-full bg-slate-800 text-slate-100 border border-slate-600 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-amber-500 outline-none">
+                                <option value="bull">Бычок (племенной молодой)</option>
+                                <option value="heifer">Тёлка</option>
+                                <option value="cow">Корова / Взрослый бык</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Age -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="text-xs font-semibold text-slate-300">Возраст (в месяцах)</label>
+                                <span id="val-age" class="text-xs font-bold text-amber-400">15 мес.</span>
+                            </div>
+                            <input type="range" id="calc-age" min="6" max="60" value="15" oninput="document.getElementById('val-age').innerText = this.value + ' мес.'" class="w-full accent-amber-500 bg-slate-700 h-2 rounded-lg cursor-pointer">
+                        </div>
+
+                        <!-- Weight -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Живая масса (вес, кг)</label>
+                            <input type="number" id="calc-weight" value="480" min="100" max="1200" class="w-full bg-slate-800 text-slate-100 border border-slate-600 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-amber-500 outline-none">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <!-- Exterior score (100 scale) -->
+                        <div>
+                            <div class="flex justify-between items-center mb-1">
+                                <label class="text-xs font-semibold text-slate-300">Оценка экстерьера (баллы)</label>
+                                <span id="val-exterior" class="text-xs font-bold text-amber-400">85 / 100</span>
+                            </div>
+                            <input type="range" id="calc-exterior" min="50" max="100" value="85" oninput="document.getElementById('val-exterior').innerText = this.value + ' / 100'" class="w-full accent-amber-500 bg-slate-700 h-2 rounded-lg cursor-pointer">
+                        </div>
+
+                        <!-- Pedigree Select -->
+                        <div>
+                            <label class="block text-xs font-semibold text-slate-300 mb-1">Родословная (ИАС)</label>
+                            <select id="calc-pedigree" class="w-full bg-slate-800 text-slate-100 border border-slate-600 rounded-lg p-2.5 text-xs focus:ring-2 focus:ring-amber-500 outline-none">
+                                <option value="elite_record">Отец и мать «Элита-Рекорд» (3+ поколения)</option>
+                                <option value="standard_breed">Подтвержденная племенная (1-2 поколения)</option>
+                                <option value="unknown">Пользовательский скот / Без документов</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button onclick="calculateClass()" class="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-extrabold py-3 px-4 rounded-xl shadow-lg transition transform hover:-translate-y-0.5 flex items-center justify-center space-x-2">
+                        <i class="fa-solid fa-calculator text-lg"></i>
+                        <span>Рассчитать класс и правовые рекомендации</span>
+                    </button>
+                </div>
+
+                <!-- OUTPUT RESULTS CARD -->
+                <div id="calc-result-card" class="lg:col-span-5 bg-slate-800/80 p-6 rounded-xl border border-slate-700 flex flex-col justify-between space-y-4">
+                    <div>
+                        <span class="text-xs font-semibold uppercase tracking-wider text-slate-400 block mb-1">Результат бонитировки:</span>
+                        <div id="res-badge" class="inline-block px-4 py-2 rounded-xl text-base font-extrabold bg-amber-500 text-slate-950 shadow-md mb-3">
+                            Класс: Нажмите «Рассчитать»
+                        </div>
+                        
+                        <h4 id="res-title" class="text-lg font-bold text-slate-100 mb-2">Ожидание данных...</h4>
+                        <p id="res-desc" class="text-xs text-slate-300 leading-relaxed mb-4">
+                            Заполните параметры животного слева и нажмите кнопку для автоматического сопоставления с минимальными требованиями бонитировки МСХ РК.
+                        </p>
+
+                        <div class="space-y-2 border-t border-slate-700 pt-4">
+                            <div class="text-xs font-bold text-amber-400 flex items-center">
+                                <i class="fa-solid fa-gavel mr-2"></i> Юридические действия в ИАС:
+                            </div>
+                            <ul id="res-legal-steps" class="text-xs text-slate-300 space-y-1 list-disc pl-4">
+                                <li>После определения класса данные вносятся в ведомость бонитировки.</li>
+                                <li>Направляется заявка в Республиканскую палату породы.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-slate-900/90 p-4 rounded-lg border border-slate-700/80 text-[11px] text-slate-400">
+                        <i class="fa-solid fa-circle-info text-amber-400 mr-1"></i>
+                        <span>Расчет носит предварительный характер согласно Правилам ведения племенного учета (Приказ МСХ РК № 3-2/306). Официальный класс присваивается аттестованным бонитером.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER WITH MANDATORY DISCLAIMER -->
+    <footer class="bg-brand-navy text-white mt-auto border-t-4 border-amber-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+            <!-- Mandatory Legal Disclaimer Box -->
+            <div class="bg-slate-950/60 p-4 rounded-xl border border-slate-700/60 text-center">
+                <p class="text-xs sm:text-sm text-slate-300 leading-relaxed font-medium">
+                    <i class="fa-solid fa-triangle-exclamation text-amber-400 mr-2"></i>
+                    Информация носит исключительно справочный характер и не заменяет официальную юридическую или ветеринарную консультацию. Проверено по состоянию на 06 ноября 2026 года.
+                </p>
+            </div>
+
+            <!-- Author info and copyright -->
+            <div class="flex flex-col sm:flex-row justify-between items-center text-xs text-slate-400 pt-4 border-t border-slate-800 gap-4">
+                <div>
+                    <p class="font-semibold text-slate-200">Учебный проект по дисциплине «Вайбкодинг для юристов» (КМ2)</p>
+                    <p>Студент: <span class="text-amber-400 font-medium">Родин Марк Александрович</span>, 3 поток</p>
+                </div>
+                <div class="text-center sm:text-right">
+                    <p>&copy; 2026 Все права защищены.</p>
+                    <p class="text-[11px] text-slate-500">Использованы данные официального портала adilet.zan.kz</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL WINDOWS FOR SAMPLE DOCUMENTS -->
+    <!-- 1. Vet Passport Modal -->
+    <div id="modal-passport" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative border border-slate-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal-passport')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h4 class="text-lg font-bold text-brand-navy mb-4 flex items-center">
+                <i class="fa-solid fa-address-card text-blue-600 mr-2"></i> Образец Ветеринарного Паспорта КРС (ИСЖ)
+            </h4>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-300 font-mono text-xs text-slate-700 space-y-2">
+                <div class="text-center font-bold border-b pb-2 text-slate-900">ВЕТЕРИНАРНЫЙ ПАСПОРТ ЖИВОТНОГО / АУЫЛ ШАРУАШЫЛЫҒЫ ЖАНУАРЫНЫҢ ВЕТЕРИНАРИЯЛЫҚ ПАСПОРТЫ</div>
+                <p><strong>ИНЖ (Индивидуальный номер):</strong> KZ 77 12345678</p>
+                <p><strong>Вид животного:</strong> Крупный рогатый скот (КРС)</p>
+                <p><strong>Порода:</strong> Ангус (Абердин-ангусская)</p>
+                <p><strong>Пол / Масть:</strong> Бык / Черная</p>
+                <p><strong>Дата рождения:</strong> 12.03.2025</p>
+                <p><strong>Владелец:</strong> КХ «Арман» (Вымышленное хозяйство)</p>
+                <p><strong>Код ветеринарного врача:</strong> VET-AST-0982</p>
+                <p><strong>Дата внесения в ИСЖ:</strong> 15.03.2025</p>
+                <div class="border-t pt-2 text-[10px] text-slate-500">Выдано ветстанцией МИО согласно Закону РК «О ветеринарии».</div>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeModal('modal-passport')" class="px-4 py-2 bg-slate-700 text-white text-xs font-semibold rounded-lg">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Artificial Insemination Act Modal -->
+    <div id="modal-act" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative border border-slate-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal-act')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h4 class="text-lg font-bold text-brand-navy mb-4 flex items-center">
+                <i class="fa-solid fa-file-signature text-brand-green mr-2"></i> Акт искусственного осеменения КРС
+            </h4>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-300 font-mono text-xs text-slate-700 space-y-2">
+                <div class="text-center font-bold border-b pb-2 text-slate-900">АКТ ИСКУССТВЕННОГО ОСЕМЕНЕНИЯ МАТОЧНОГО ПОГОЛОВЬЯ</div>
+                <p><strong>Дата проведения:</strong> 10.05.2025</p>
+                <p><strong>ИНЖ Коровы:</strong> KZ 77 87654321</p>
+                <p><strong>Кличка / Инвентарный №:</strong> Зорька № 405</p>
+                <p><strong>Бык-производитель (код семени):</strong> USA-1982736 "Titan"</p>
+                <p><strong>Порода быка:</strong> Герефорд</p>
+                <p><strong>Техник-осеменатор:</strong> Смирнов В.П. (сертификат № 4412)</p>
+                <p><strong>Статус в ИАС:</strong> Запись внесена (ID #991823)</p>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeModal('modal-act')" class="px-4 py-2 bg-slate-700 text-white text-xs font-semibold rounded-lg">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Breeding Certificate Modal -->
+    <div id="modal-cert" class="hidden fixed inset-0 z-50 bg-slate-900/70 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-2xl max-w-xl w-full p-6 shadow-2xl relative border border-slate-200 max-h-[90vh] overflow-y-auto">
+            <button onclick="closeModal('modal-cert')" class="absolute top-4 right-4 text-slate-400 hover:text-slate-600 text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h4 class="text-lg font-bold text-brand-navy mb-4 flex items-center">
+                <i class="fa-solid fa-stamp text-amber-600 mr-2"></i> Племенное свидетельство РК (Выписка)
+            </h4>
+            <div class="bg-slate-50 p-4 rounded-xl border border-slate-300 font-mono text-xs text-slate-700 space-y-2">
+                <div class="text-center font-bold border-b pb-2 text-slate-900">РЕСПУБЛИКАНСКАЯ ПАЛАТА ПОРОДЫ КРС РК</div>
+                <div class="text-center font-semibold text-brand-green">ПЛЕМЕННОЕ СВИДЕТЕЛЬСТВО № KZ-2025-09182</div>
+                <p><strong>Имя животного:</strong> Гром</p>
+                <p><strong>ИНЖ:</strong> KZ 77 99001122</p>
+                <p><strong>Класс бонитировки:</strong> Элита-Рекорд</p>
+                <p><strong>Оценка экстерьера:</strong> 92 балла</p>
+                <p><strong>Отец:</strong> Champion #001 (Племенная книга США)</p>
+                <p><strong>Мать:</strong> KZ 77 11223344 (Элита)</p>
+                <p><strong>Дата выдачи палатой:</strong> 20.09.2025</p>
+            </div>
+            <div class="mt-6 flex justify-end">
+                <button onclick="closeModal('modal-cert')" class="px-4 py-2 bg-slate-700 text-white text-xs font-semibold rounded-lg">Закрыть</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRINT ONLY TEMPLATE CONTAINER -->
+    <div id="printable-checklist" class="print-only p-8 font-sans">
+        <h1 class="text-2xl font-bold mb-2">Племенной КРС: Юридический чек-лист фермера</h1>
+        <p class="text-sm mb-4">Автор: Родин Марк Александрович (3 поток)</p>
+        <p class="text-xs mb-6 text-gray-600">Сгенерировано по законодательству РК. Проверено по adilet.zan.kz</p>
+        <div id="print-items-list" class="space-y-3">
+            <!-- Will be populated dynamically for clean printing -->
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APP LOGIC -->
+    <script>
+        // Data Store for Checklist Items (10 legal tasks as per specifications)
+        const initialTasks = [
+            {
+                id: 1,
+                category: 'isz',
+                title: 'Мечение (биркация) новорожденного теленка',
+                desc: 'Навешивание двух ушных бирк с ИНЖ в течение 14 дней со дня рождения (Приказ МСХ РК № 7-1/48, п. 12).',
+                npa: 'Закон РК «О ветеринарии»'
+            },
+            {
+                id: 2,
+                category: 'isz',
+                title: 'Внесение данных о биркации в базу ИСЖ',
+                desc: 'Подача сведений ветеринарному врачу МИО для занесения в ИСЖ в течение 3 рабочих дней.',
+                npa: 'Приказ МСХ РК № 7-1/48, п. 19'
+            },
+            {
+                id: 3,
+                category: 'isz',
+                title: 'Получение ветеринарного паспорта КРС',
+                desc: 'Получение официального ветеринарного паспорта с ИНЖ в течение 3 дней после регистрации.',
+                npa: 'Закон РК «О ветеринарии», ст. 35'
+            },
+            {
+                id: 4,
+                category: 'ias',
+                title: 'Регистрация акта искусственного осеменения',
+                desc: 'Внесение данных о быке-производителе и дате осеменения в систему ИАС в течение 7 дней.',
+                npa: 'Правила ведения ИАС (Приказ МСХ РК)'
+            },
+            {
+                id: 5,
+                category: 'ias',
+                title: 'Проведение ежегодной бонитировки',
+                desc: 'Оценка экстерьера и племенной ценности КРС с участием эксперта 1 раз в год.',
+                npa: 'Правила ведения племенного учета'
+            },
+            {
+                id: 6,
+                category: 'ias',
+                title: 'Оформление Племенного свидетельства',
+                desc: 'Подача заявки в Республиканскую палату и получение свидетельства в течение 5 рабочих дней.',
+                npa: 'Закон РК «О племенном животноводстве», ст. 14'
+            },
+            {
+                id: 7,
+                category: 'expo',
+                title: 'Профилактический карантин перед выставкой',
+                desc: 'Проведение обязательной 30-дневной изоляции и диагностических исследований скота.',
+                npa: 'Ветеринарно-санитарные правила РК, п. 42'
+            },
+            {
+                id: 8,
+                category: 'expo',
+                title: 'Вакцинация против сибирской язвы',
+                desc: 'Проведение прививки не позднее 14 дней до даты транспортировки на выставку.',
+                npa: 'Ветеринарно-санитарные правила РК'
+            },
+            {
+                id: 9,
+                category: 'expo',
+                title: 'Получение Ветеринарной справки формы № 1',
+                desc: 'Получение ветсправки через ИСЖ. Действительна в течение 3 суток с момента выдачи.',
+                npa: 'Приказ МСХ РК № 7-1/393'
+            },
+            {
+                id: 10,
+                category: 'expo',
+                title: 'Регистрация животного в реестре участников выставки',
+                desc: 'Предъявление ветсправки № 1 и Племенного свидетельства организационному комитету.',
+                npa: 'Регламент выставки КРС РК'
+            }
+        ];
+
+        // State storage
+        let checkedTaskIds = new Set();
+        let currentCategory = 'all';
+
+        // LocalStorage Key
+        const STORAGE_KEY = 'krs_checklist_completed_tasks_v1';
+
+        // DOM Ready Initialisation
+        document.addEventListener('DOMContentLoaded', () => {
+            loadSavedState();
+            renderChecklist();
+            setupMobileMenu();
+        });
+
+        // Load saved state from LocalStorage
+        function loadSavedState() {
+            try {
+                const saved = localStorage.getItem(STORAGE_KEY);
+                if (saved) {
+                    const parsed = JSON.parse(saved);
+                    checkedTaskIds = new Set(parsed);
+                }
+            } catch (e) {
+                console.error("Ошибка загрузки из localStorage", e);
+            }
+        }
+
+        // Save current state to LocalStorage
+        function saveState() {
+            try {
+                localStorage.setItem(STORAGE_KEY, JSON.stringify(Array.from(checkedTaskIds)));
+            } catch (e) {
+                console.error("Ошибка сохранения в localStorage", e);
+            }
+        }
+
+        // Toggle task status
+        function toggleTask(id) {
+            if (checkedTaskIds.has(id)) {
+                checkedTaskIds.delete(id);
+            } else {
+                checkedTaskIds.add(id);
+            }
+            saveState();
+            updateProgress();
+        }
+
+        // Filter Checklist View
+        function filterChecklist(cat) {
+            currentCategory = cat;
+            
+            // Update UI Active Tab Styles
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if (btn.getAttribute('data-category') === cat) {
+                    btn.classList.add('bg-brand-navy', 'text-white');
+                    btn.classList.remove('bg-slate-100', 'text-slate-700');
+                } else {
+                    btn.classList.remove('bg-brand-navy', 'text-white');
+                    btn.classList.add('bg-slate-100', 'text-slate-700');
+                }
+            });
+
+            renderChecklist();
+        }
+
+        // Render Tasks to DOM
+        function renderChecklist() {
+            const container = document.getElementById('checklist-items');
+            container.innerHTML = '';
+
+            const filtered = currentCategory === 'all' 
+                ? initialTasks 
+                : initialTasks.filter(t => t.category === currentCategory);
+
+            filtered.forEach(task => {
+                const isChecked = checkedTaskIds.has(task.id);
+                
+                const card = document.createElement('div');
+                card.className = `p-4 rounded-xl border transition-all duration-200 flex items-start space-x-3 cursor-pointer ${
+                    isChecked 
+                        ? 'bg-green-50/70 border-green-300' 
+                        : 'bg-white border-slate-200 hover:border-slate-300'
+                }`;
+
+                card.onclick = (e) => {
+                    // Prevent triggering twice if user clicks directly on checkbox input
+                    if (e.target.tagName !== 'INPUT') {
+                        const checkbox = card.querySelector('input[type="checkbox"]');
+                        checkbox.checked = !checkbox.checked;
+                    }
+                    toggleTask(task.id);
+                    renderChecklist();
+                };
+
+                let categoryBadge = '';
+                if (task.category === 'isz') {
+                    categoryBadge = `<span class="text-[10px] bg-blue-100 text-blue-800 font-bold px-2 py-0.5 rounded">ИСЖ</span>`;
+                } else if (task.category === 'ias') {
+                    categoryBadge = `<span class="text-[10px] bg-green-100 text-green-800 font-bold px-2 py-0.5 rounded">ИАС</span>`;
+                } else {
+                    categoryBadge = `<span class="text-[10px] bg-amber-100 text-amber-800 font-bold px-2 py-0.5 rounded">Выставка</span>`;
+                }
+
+                card.innerHTML = `
+                    <input type="checkbox" ${isChecked ? 'checked' : ''} 
+                        class="mt-1 w-5 h-5 rounded text-brand-green focus:ring-brand-green accent-brand-green cursor-pointer">
+                    <div class="flex-grow">
+                        <div class="flex items-center space-x-2 mb-1">
+                            ${categoryBadge}
+                            <h5 class="font-bold text-sm ${isChecked ? 'line-through text-slate-500' : 'text-slate-800'}">
+                                ${task.title}
+                            </h5>
+                        </div>
+                        <p class="text-xs text-slate-600 leading-relaxed mb-1">${task.desc}</p>
+                        <span class="text-[11px] text-slate-400 font-medium"><i class="fa-solid fa-bookmark text-slate-300 mr-1"></i>${task.npa}</span>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            updateProgress();
+            preparePrintList();
+        }
+
+        // Update Progress bar calculation
+        function updateProgress() {
+            const total = initialTasks.length;
+            const completed = checkedTaskIds.size;
+            const percent = Math.round((completed / total) * 100);
+
+            const progressBar = document.getElementById('progress-bar');
+            const percentText = document.getElementById('progress-percent');
+            const countText = document.getElementById('progress-count');
+            const statusText = document.getElementById('progress-status');
+
+            progressBar.style.width = `${percent}%`;
+            percentText.innerText = `${percent}%`;
+            countText.innerText = `Выполнено ${completed} из ${total} шагов`;
+
+            if (percent === 100) {
+                statusText.innerText = 'Статус: Все юридические процедуры успешно пройдены!';
+                statusText.className = 'font-bold text-brand-green';
+            } else if (percent >= 50) {
+                statusText.innerText = 'Статус: В процессе оформления документов';
+                statusText.className = 'font-semibold text-blue-600';
+            } else {
+                statusText.innerText = 'Статус: Требуется выполнение процедур';
+                statusText.className = 'font-medium text-amber-600';
+            }
+        }
+
+        // Reset Checklist
+        function resetChecklist() {
+            if (checkedTaskIds.size === 0) return;
+            checkedTaskIds.clear();
+            saveState();
+            renderChecklist();
+        }
+
+        // Export selected tasks to TXT file
+        function exportChecklist() {
+            let content = `ЧЕК-ЛИСТ ПРОХОЖДЕНИЯ ЮРИДИЧЕСКИХ ПРОЦЕДУР ПО ПЛЕМЕННОМУ КРС\n`;
+            content += `Автор: Родин Марк Александрович (3 поток)\n`;
+            content += `Дата формирования: ${new Date().toLocaleDateString()}\n`;
+            content += `=========================================================\n\n`;
+
+            initialTasks.forEach((task, index) => {
+                const isChecked = checkedTaskIds.has(task.id);
+                content += `${index + 1}. [${isChecked ? 'X' : ' '}] ${task.title}\n`;
+                content += `   Описание: ${task.desc}\n`;
+                content += `   Основание: ${task.npa}\n\n`;
+            });
+
+            const total = initialTasks.length;
+            const completed = checkedTaskIds.size;
+            content += `=========================================================\n`;
+            content += `ИТОГОВЫЙ ПРОГРЕСС: ${Math.round((completed / total) * 100)}% (Выполнено ${completed} из ${total})\n`;
+            content += `Дисклеймер: Информация носит справочный характер (adilet.zan.kz).\n`;
+
+            // Trigger file download
+            const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = `krs_checklist_rodin_mark.txt`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Prepare simple HTML for window.print()
+        function preparePrintList() {
+            const printContainer = document.getElementById('print-items-list');
+            if (!printContainer) return;
+            printContainer.innerHTML = '';
+
+            initialTasks.forEach((task, i) => {
+                const isChecked = checkedTaskIds.has(task.id);
+                const item = document.createElement('div');
+                item.className = 'border-b pb-2';
+                item.innerHTML = `
+                    <div class="font-bold">${i + 1}. [${isChecked ? 'ГОТОВО' : 'НЕ ВЫПОЛНЕНО'}] ${task.title}</div>
+                    <div class="text-xs text-gray-700">${task.desc}</div>
+                    <div class="text-[10px] text-gray-500">Норма: ${task.npa}</div>
+                `;
+                printContainer.appendChild(item);
+            });
+        }
+
+        // Mobile Menu Toggle
+        function setupMobileMenu() {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const links = document.querySelectorAll('.mobile-link');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            links.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.add('hidden');
+                });
+            });
+        }
+
+        // Modal Controllers
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.remove('hidden');
+            }
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            if (modal) {
+                modal.classList.add('hidden');
+            }
+        }
+
+        // Close modal on outside click or ESC key
+        window.onclick = function(event) {
+            if (event.target.classList.contains('backdrop-blur-sm')) {
+                event.target.classList.add('hidden');
+            }
+        };
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                document.querySelectorAll('[id^="modal-"]').forEach(m => m.classList.add('hidden'));
+            }
+        });
+
+        // Calculate Livestock Breeding Class (Section 6)
+        function calculateClass() {
+            const breedEl = document.getElementById('calc-breed');
+            const sexEl = document.getElementById('calc-sex');
+            const ageEl = document.getElementById('calc-age');
+            const weightEl = document.getElementById('calc-weight');
+            const exteriorEl = document.getElementById('calc-exterior');
+            const pedigreeEl = document.getElementById('calc-pedigree');
+
+            if (!breedEl || !sexEl || !ageEl || !weightEl || !exteriorEl || !pedigreeEl) {
+                return;
+            }
+
+            const breed = breedEl.value;
+            const sex = sexEl.value;
+            const age = parseInt(ageEl.value) || 12;
+            const weight = parseFloat(weightEl.value) || 0;
+            const exterior = parseInt(exteriorEl.value) || 50;
+            const pedigree = pedigreeEl.value;
+
+            let resultClass = '2 класс';
+            let badgeClass = 'bg-slate-600 text-white';
+            let title = 'Второй класс (Племенное поголовье)';
+            let desc = '';
+            let steps = [];
+
+            // Minimum weight benchmark for bulls aged 15 months (approx 450kg for Elite)
+            const minWeightElite = sex === 'bull' ? (age * 28 + 50) : (age * 22 + 40);
+            const minWeightRecord = minWeightElite * 1.12;
+
+            if (pedigree === 'unknown') {
+                resultClass = 'Вне класса (Товарный скот)';
+                badgeClass = 'bg-rose-600 text-white';
+                title = 'Неплеменное / Товарное поголовье';
+                desc = 'Животное не имеет официально подтвержденной родословной в ИАС. Присвоение племенного класса невозможно до подтверждения генотипа.';
+                steps = [
+                    'Животное подлежит учету в ИСЖ как товарный скот.',
+                    'Субсидии на племенное дело не выплачиваются.',
+                    'Участие в выставках племенного КРС не допускается.'
+                ];
+            } else if (pedigree === 'elite_record' && weight >= minWeightRecord && exterior >= 85) {
+                resultClass = 'Элита-Рекорд';
+                badgeClass = 'bg-amber-400 text-slate-950 font-extrabold';
+                title = 'Высший племенной класс (Элита-Рекорд)';
+                desc = 'Бык/тёлка обладает выдающимися экстерьерными данными, высокими отвесами и безупречной генетикой.';
+                steps = [
+                    'Выдача Племенного свидетельства высшей категории в течение 5 дней.',
+                    'Максимальный размер государственных субсидий в РК.',
+                    'Рекомендовано к участию в республиканских и международных выставках КРС.'
+                ];
+            } else if ((pedigree === 'elite_record' || pedigree === 'standard_breed') && weight >= minWeightElite && exterior >= 78) {
+                resultClass = 'Элита';
+                badgeClass = 'bg-brand-green text-white';
+                title = 'Племенной класс «Элита»';
+                desc = 'Животное полностью соответствует стандартам породы и рекомендовано для воспроизводства стада.';
+                steps = [
+                    'Внесение записи в ИАС и оформление Племенного свидетельства.',
+                    'Право на получение субсидий за ведение селекционной работы.',
+                    'Допуск к участию в региональных выставках.'
+                ];
+            } else if (weight >= (minWeightElite * 0.85) && exterior >= 70) {
+                resultClass = '1 класс';
+                badgeClass = 'bg-blue-600 text-white';
+                title = 'Первый племенной класс';
+                desc = 'Животное имеет хорошую массу и экстерьер, подходит для чистопородного разведения.';
+                steps = [
+                    'Регистрация в ИАС с классом I.',
+                    'Возможность получения базовых субсидий при выполнении нормативов.'
+                ];
+            } else {
+                resultClass = '2 класс';
+                badgeClass = 'bg-slate-600 text-white';
+                title = 'Второй племенной класс';
+                desc = 'Масса или оценка экстерьера ниже стандартов класса «Элита». Требуется усиленный рацион.';
+                steps = [
+                    'Запись в ИАС без выставочного допуска.',
+                    'Рекомендована повторная бонитировка через 6 месяцев.'
+                ];
+            }
+
+            // Update DOM UI
+            const resBadge = document.getElementById('res-badge');
+            if (resBadge) {
+                resBadge.innerText = `Класс: ${resultClass}`;
+                resBadge.className = `inline-block px-4 py-2 rounded-xl text-base font-extrabold shadow-md mb-3 ${badgeClass}`;
+            }
+
+            const resTitle = document.getElementById('res-title');
+            if (resTitle) resTitle.innerText = title;
+
+            const resDesc = document.getElementById('res-desc');
+            if (resDesc) resDesc.innerText = desc;
+
+            const stepsContainer = document.getElementById('res-legal-steps');
+            if (stepsContainer) {
+                stepsContainer.innerHTML = '';
+                steps.forEach(step => {
+                    const li = document.createElement('li');
+                    li.innerText = step;
+                    stepsContainer.appendChild(li);
+                });
+            }
+        }
+    </script>
+</body>
+</html>
